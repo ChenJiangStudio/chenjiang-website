@@ -4,16 +4,122 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="宸匠木作工具箱，為木作現場打造的估料、報價與工程管理工具。">
-  <title>宸匠木作工具箱</title>
+  <title>宸匠木作工具箱｜木作現場的數位工具</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .showcase { padding: 0 0 84px; background: linear-gradient(180deg, #f2eee3 0%, #e4e8dd 100%); }
+    .showcase-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 42px; align-items: center; }
+    .showcase-copy { padding: 68px 0; }
+    .showcase-kicker { margin: 0 0 13px; color: #9b4e2e; font-size: .78rem; font-weight: 900; letter-spacing: .18em; }
+    .showcase-copy h2 { margin: 0; font-size: clamp(2.35rem, 5vw, 4.3rem); }
+    .showcase-copy p { max-width: 36rem; margin: 20px 0 0; font-size: 1.05rem; }
+    .feature-tabs { display: grid; gap: 8px; margin-top: 29px; }
+    .feature-tab { width: 100%; padding: 13px 16px; display: flex; justify-content: space-between; align-items: center; color: #17342b; background: transparent; border: 1px solid rgba(18, 33, 29, .18); border-radius: 10px; font: inherit; font-weight: 800; text-align: left; cursor: pointer; transition: .2s ease; }
+    .feature-tab:hover, .feature-tab[aria-selected="true"] { color: #fffaf0; background: #17342b; border-color: #17342b; transform: translateX(5px); }
+    .feature-tab span { color: inherit; opacity: .72; font-size: .8rem; }
+    .tool-screen { min-height: 494px; padding: 22px; color: #eff6ea; background: #11251f; border: 10px solid #30433b; border-radius: 30px; box-shadow: 17px 17px 0 rgba(155, 78, 46, .25); }
+    .screen-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; color: #9cd8c4; font-size: .82rem; letter-spacing: .08em; }
+    .screen-dot { width: 9px; height: 9px; display: inline-block; margin-right: 6px; border-radius: 50%; background: #d8a840; }
+    .screen-title { max-width: 390px; margin: 0; color: #fffaf0; font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif TC", serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.08; }
+    .screen-description { min-height: 53px; max-width: 400px; margin: 16px 0 25px; color: #c9d7ce; }
+    .screen-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .stat { padding: 14px 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.13); border-radius: 12px; }
+    .stat b { display: block; color: #f4c964; font-size: 1.18rem; }
+    .stat small { color: #b7c9bf; font-size: .76rem; }
+    .screen-list { margin-top: 18px; padding: 0; list-style: none; }
+    .screen-list li { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: #dfe9e1; }
+    .screen-list li:last-child { border: 0; }
+    .screen-list b { color: #8fe3ca; }
+    .promise { padding: 32px 0 72px; background: #17342b; color: #fffaf0; }
+    .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .promise-item { border-top: 2px solid #d8a840; padding-top: 13px; }
+    .promise-item strong { display: block; font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif TC", serif; font-size: 1.5rem; }
+    .promise-item p { margin: 7px 0 0; color: #c9d7ce; }
+    @media (max-width: 760px) { .showcase-wrap { grid-template-columns: 1fr; gap: 0; } .showcase-copy { padding: 54px 0 32px; } .tool-screen { min-height: 440px; margin-bottom: 5px; } .promise-grid { grid-template-columns: 1fr; gap: 21px; } }
+  </style>
 </head>
 <body>
-  <header class="site-header"><nav class="nav shell" aria-label="主要導覽"><a class="brand" href="index.html">宸匠木作工具箱</a><div class="nav-links"><a aria-current="page" href="index.html">首頁</a><a href="privacy.html">隱私權政策</a><a href="support.html">技術支援</a><a href="contact.html">聯絡我們</a></div></nav></header>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="主要導覽">
+      <a class="brand" href="index.html">宸匠木作工具箱</a>
+      <div class="nav-links">
+        <a aria-current="page" href="index.html">首頁</a>
+        <a href="privacy.html">隱私權政策</a>
+        <a href="support.html">技術支援</a>
+        <a href="contact.html">聯絡我們</a>
+      </div>
+    </nav>
+  </header>
   <main>
-    <section class="hero"><div class="shell"><p class="eyebrow">WOODWORK, MADE PRACTICAL</p><h1>把手藝留下來，<br>讓經驗繼續傳承下去。</h1><p class="lead">宸匠木作工具箱將木作現場的尺寸、材料、報價與工程紀錄，整理成師傅真正用得上的工作流程。</p><a class="button" href="support.html">取得使用協助</a></div></section>
-    <section><div class="shell"><p class="eyebrow" style="color:#9b4e2e">現場為先</p><h2 class="section-title">把複雜的木作工作，留給好用的工具處理。</h2><div class="grid"><article class="feature"><span class="number">01 / 報價</span><h3>客戶報價與 PDF</h3><p>整理施工項目、數量、單價與合計，產生可預覽、分享與列印的專業文件。</p></article><article class="feature"><span class="number">02 / 材料</span><h3>材料估價與多供應商</h3><p>保留材料規格、參考價格與供應商快照，讓估價與採購更有依據。</p></article><article class="feature"><span class="number">03 / 估料</span><h3>天花板、隔間、房門估料</h3><p>將常用木作尺寸與現場計算流程，轉成清楚可操作的估料工具。</p></article><article class="feature"><span class="number">04 / 工程</span><h3>工程中心與工程照片</h3><p>集中管理工程、客戶與現場照片，讓每個案子的紀錄能持續累積。</p></article></div></div></section>
-    <section class="statement"><div class="shell"><blockquote>「工具不是取代手藝，而是讓每一次累積，都能被下一個人接住。」</blockquote></div></section>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">WOODWORK, MADE PRACTICAL</p>
+        <h1>把手藝留下來，<br>讓經驗繼續傳承下去。</h1>
+        <p class="lead">宸匠木作工具箱，將木作現場的尺寸、材料、報價與工程紀錄，整理成師傅真正用得上的工作流程。</p>
+        <a class="button" href="#showcase">探索工具流程</a>
+      </div>
+    </section>
+
+    <section class="showcase" id="showcase">
+      <div class="shell showcase-wrap">
+        <div class="showcase-copy">
+          <p class="showcase-kicker">一套工具，接住每個現場決定</p>
+          <h2>從第一筆尺寸，做到最後一份文件。</h2>
+          <p>點選左側功能，看看宸匠木作工具箱如何將複雜工作拆成清楚的下一步。</p>
+          <div class="feature-tabs" role="tablist" aria-label="工具功能展示">
+            <button class="feature-tab" type="button" role="tab" aria-selected="true" data-feature="quote">客戶報價與 PDF <span>01</span></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false" data-feature="material">材料估價與供應商 <span>02</span></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false" data-feature="calculate">天花板、隔間、房門估料 <span>03</span></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false" data-feature="project">工程中心與工程照片 <span>04</span></button>
+          </div>
+        </div>
+        <section class="tool-screen" aria-live="polite" aria-label="功能展示畫面">
+          <div class="screen-top"><span><i class="screen-dot"></i>宸匠木作工具箱</span><span id="screen-step">01 / 報價</span></div>
+          <h3 class="screen-title" id="screen-title">一張讓客戶看懂的報價單。</h3>
+          <p class="screen-description" id="screen-description">從工項主檔快速帶入內容，調整數量與單價後即可檢查、預覽並分享 PDF。</p>
+          <div class="screen-stats" id="screen-stats"></div>
+          <ul class="screen-list" id="screen-list"></ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="shell promise-grid">
+        <div class="promise-item"><strong>現場語言</strong><p>保留木作師傅熟悉的尺寸、材料與估料用語。</p></div>
+        <div class="promise-item"><strong>資料在手</strong><p>工程、材料與報價資料主要儲存在使用者自己的裝置。</p></div>
+        <div class="promise-item"><strong>文件可交付</strong><p>估價與報價可預覽、分享、列印，讓工作成果即時帶著走。</p></div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer"><div class="shell"><p>宸匠木作工具箱 · 為木作現場而做</p></div></footer>
+  <script>
+    const features = {
+      quote: { step: '01 / 報價', title: '一張讓客戶看懂的報價單。', description: '從工項主檔快速帶入內容，調整數量與單價後即可檢查、預覽並分享 PDF。', stats: [['3', '工項'], ['NT$ 68,500', '報價合計'], ['PDF', '可分享']], rows: [['施工項目', '數量 × 單價'], ['客戶資料', '一併帶入'], ['文件檢查', '完成後預覽']] },
+      material: { step: '02 / 材料', title: '每一筆材料，都留得住來源。', description: '材料估價單保留規格、數量、參考單價與供應商快照，採購時不必回頭翻找。', stats: [['12', '材料項目'], ['3', '供應商'], ['NT$ 31,240', '估價總計']], rows: [['木心板 4×8', '宏昌木材行'], ['9 分角材', '主要供應商'], ['價格資料', '建立時快照']] },
+      calculate: { step: '03 / 估料', title: '尺寸輸入後，先把現場算清楚。', description: '天花板、隔間與房門工具，將板材、骨架與施工尺寸整理成可核對的結果。', stats: [['4', '板材規格'], ['2', '封板面向'], ['1', '完整估料結果']], rows: [['板材排版', '依尺寸收尾'], ['骨架配置', '承接板縫'], ['材料摘要', '片、支、盒']] },
+      project: { step: '04 / 工程', title: '每個案子，都有完整的工作軌跡。', description: '集中工程、客戶與現場照片，讓估料、報價與施工紀錄跟著工程持續累積。', stats: [['8', '工程紀錄'], ['24', '現場照片'], ['1', '目前工程']], rows: [['工程照片', '拍照或相簿加入'], ['客戶資料', '集中管理'], ['工作文件', '隨工程保存']] }
+    };
+    const screenStep = document.querySelector('#screen-step');
+    const screenTitle = document.querySelector('#screen-title');
+    const screenDescription = document.querySelector('#screen-description');
+    const screenStats = document.querySelector('#screen-stats');
+    const screenList = document.querySelector('#screen-list');
+    function renderFeature(key) {
+      const feature = features[key];
+      screenStep.textContent = feature.step;
+      screenTitle.textContent = feature.title;
+      screenDescription.textContent = feature.description;
+      screenStats.innerHTML = feature.stats.map(([value, label]) => `<div class="stat"><b>${value}</b><small>${label}</small></div>`).join('');
+      screenList.innerHTML = feature.rows.map(([label, value]) => `<li><span>${label}</span><b>${value}</b></li>`).join('');
+    }
+    document.querySelectorAll('.feature-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.feature-tab').forEach((button) => button.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+        renderFeature(tab.dataset.feature);
+      });
+    });
+    renderFeature('quote');
+  </script>
 </body>
 </html>
