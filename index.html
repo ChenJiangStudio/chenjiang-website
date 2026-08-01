@@ -141,6 +141,18 @@
       .promise-grid { grid-template-columns: 1fr; gap: 28px; }
       .promise-lead { grid-column: auto; }
     }
+
+    /* 匠字 Hero：原創工具構字影像，搭配職人紙本質感。 */
+    .hero-grid { grid-template-columns: minmax(0, 1.06fr) minmax(0, .78fr); gap: clamp(40px, 7vw, 94px); }
+    .hero-copy { padding: 12px 0 22px; }
+    .hero-mark { margin: 0 0 6px; color: var(--wood-deep); font-family: "DFKai-SB", "BiauKai", "STKaiti", "Songti TC", serif; font-size: clamp(7.2rem, 14.4vw, 12.3rem); font-weight: 900; line-height: .76; letter-spacing: .04em; text-shadow: .025em .03em 0 rgba(154,84,43,.14); transform: rotate(-2deg); transform-origin: left center; }
+    .hero-statement { margin: 25px 0 0; color: var(--ink); font-family: "DFKai-SB", "BiauKai", "STKaiti", "Songti TC", serif; font-size: clamp(2rem, 3.7vw, 3.55rem); font-weight: 900; letter-spacing: .035em; line-height: 1.24; }
+    .hero-copy .lead { max-width: 520px; margin-top: 27px; }
+    .craft-visual { order: -1; min-height: 0; margin: 0; padding: 13px; transform: rotate(-1.35deg); background: #e7d2b7; border: 1px solid rgba(94,53,25,.2); border-radius: 5px 22px 6px 17px; box-shadow: 14px 17px 0 rgba(116,68,31,.16); }
+    .craft-visual img { display: block; width: 100%; aspect-ratio: 1.04 / 1; object-fit: cover; object-position: left center; border-radius: 2px 15px 2px 12px; }
+    .craft-visual figcaption { margin: 10px 4px 1px; color: #70401f; font-family: "Songti TC", "STSong", serif; font-size: .78rem; font-weight: 800; letter-spacing: .08em; transform: rotate(.8deg); }
+     (max-width: 870px) { .craft-visual { order: initial; max-width: 650px; margin: 0 auto; } .hero-mark { font-size: clamp(6.3rem, 27vw, 10rem); } }
+     (max-width: 620px) { .hero-grid { gap: 38px; } .hero-copy { padding: 0; } .hero-statement { margin-top: 21px; font-size: clamp(1.86rem, 9vw, 2.65rem); } .craft-visual { padding: 9px; box-shadow: 8px 10px 0 rgba(116,68,31,.15); } .craft-visual img { aspect-ratio: 1 / 1; } }
   </style>
 </head>
 <body>
@@ -159,10 +171,11 @@
   <main>
     <section class="hero">
       <div class="shell hero-grid">
-        <div>
+        <div class="hero-copy">
           <p class="kicker">木作經驗 × 數位工具</p>
-          <h1>把手藝留下來，<br>讓<span class="brush">經驗繼續傳承</span>。</h1>
-          <p class="lead">宸匠木作工具箱整合客戶報價、材料估價、木作估料與工程管理，讓現場經驗與數位工具真正接在一起。</p>
+          <h1 class="hero-mark">匠</h1>
+          <p class="hero-statement">把手藝留下來，<br>讓經驗傳承下去。</p>
+          <p class="lead">將木作經驗整理成工具，從估料、施工、材料、報價到工程管理，讓每一位木匠都能把經驗留下，讓下一代持續傳承。</p>
           <div class="hero-actions">
             <a class="button" href="#tools">探索工具箱功能</a>
             <a class="text-link" href="contact.html">聯絡我們</a>
@@ -173,13 +186,10 @@
           </ul>
         </div>
 
-        <div class="craft-visual" aria-label="木作工作台與工程圖示意">
-          <div class="blueprint"><span class="blueprint-label">WOODWORK PLAN / 01</span><span class="blueprint-measure">1210 mm</span></div>
-          <div class="bench"></div>
-          <div class="plane"></div>
-          <div class="mallet"></div>
-          <span class="hero-stamp">現場經驗，整理成工具</span>
-        </div>
+        <figure class="craft-visual" aria-label="工具排列成匠字的木作主視覺">
+          <img src="assets/hero-craftsman-character.png" alt="由木工角尺、鑿刀、木板、鉛筆與捲尺排列成的匠字">
+          <figcaption>一筆一畫，都是現場留下的功夫。</figcaption>
+        </figure>
       </div>
     </section>
 
