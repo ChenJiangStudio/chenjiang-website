@@ -153,39 +153,6 @@
     .craft-visual figcaption { margin: 10px 4px 1px; color: #70401f; font-family: "Songti TC", "STSong", serif; font-size: .78rem; font-weight: 800; letter-spacing: .08em; transform: rotate(.8deg); }
     @media (max-width: 870px) { .craft-visual { order: initial; max-width: 650px; margin: 0 auto; } .hero-mark { font-size: clamp(6.3rem, 27vw, 10rem); } }
     @media (max-width: 620px) { .hero-grid { gap: 38px; } .hero-copy { padding: 0; } .hero-statement { margin-top: 21px; font-size: clamp(1.86rem, 9vw, 2.65rem); } .craft-visual { padding: 9px; box-shadow: 8px 10px 0 rgba(116,68,31,.15); } .craft-visual img { aspect-ratio: 1 / 1; } }
-
-    /* 宸匠工坊動畫 M0：只作為首頁背景，不攔截任何操作。 */
-    .workshop-scene { align-items: end; background: linear-gradient(180deg, rgba(244,232,211,.66), rgba(213,177,126,.36)); border-top: 1px dashed rgba(103,61,32,.25); grid-column: 1 / -1; isolation: isolate; margin-top: clamp(8px, 2vw, 24px); min-height: 132px; overflow: hidden; pointer-events: none; position: relative; }
-    .workshop-scene::before, .workshop-scene::after { content: ""; inset: 0; pointer-events: none; position: absolute; }
-    .workshop-scene::before { background: repeating-linear-gradient(90deg, transparent 0 42px, rgba(82,48,24,.055) 43px 44px); opacity: .8; }
-    .workshop-scene::after { background: linear-gradient(0deg, rgba(71,42,23,.27) 0 9px, transparent 9px); }
-    .workshop-caption { color: rgba(74,44,24,.62); font-family: "Songti TC", serif; font-size: .7rem; font-weight: 800; left: 14px; letter-spacing: .12em; position: absolute; top: 12px; transform: rotate(-1.4deg); }
-    .workshop-worker { bottom: 11px; height: 84px; position: absolute; transform-origin: bottom center; width: 55px; z-index: 1; }
-    .workshop-worker .hardhat, .workshop-worker .head, .workshop-worker .body, .workshop-worker .tool { display: block; position: absolute; }
-    .workshop-worker .hardhat { background: #dba047; border: 2px solid #70421f; border-bottom: 0; border-radius: 17px 17px 5px 5px; height: 14px; left: 19px; top: 4px; width: 23px; z-index: 2; }
-    .workshop-worker .head { background: #bc774c; border-radius: 50%; height: 20px; left: 20px; top: 13px; width: 20px; z-index: 1; }
-    .workshop-worker .body { background: #355b50; border: 2px solid #214136; border-radius: 11px 11px 4px 4px; height: 39px; left: 13px; top: 31px; width: 34px; }
-    .workshop-worker .body::after { background: #714726; bottom: -13px; box-shadow: 18px 0 #714726; content: ""; height: 18px; left: 5px; position: absolute; width: 8px; }
-    .workshop-worker .name { bottom: -2px; color: #5b361f; font-family: "Songti TC", serif; font-size: .7rem; font-weight: 900; left: 50%; letter-spacing: .08em; position: absolute; transform: translateX(-50%); white-space: nowrap; }
-    .worker-mu { left: 19%; animation: workshop-saw 5.9s ease-in-out infinite; }
-    .worker-chi { left: 46%; animation: workshop-carry 6.8s ease-in-out 1.1s infinite; }
-    .worker-feng { left: 71%; animation: workshop-cart 7.4s ease-in-out 2.2s infinite; }
-    .worker-mu .tool { background: #6f8290; height: 5px; left: 34px; top: 45px; transform: rotate(-27deg); width: 31px; }
-    .worker-chi .tool { background: #b78650; border: 2px solid #70421f; height: 19px; left: -9px; top: 45px; transform: rotate(-10deg); width: 29px; }
-    .worker-feng .tool { border: 3px solid #70421f; border-bottom: 0; height: 17px; left: 33px; top: 50px; transform: skewX(-14deg); width: 27px; }
-    @keyframes workshop-saw { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(2deg) translateY(2px); } }
-    @keyframes workshop-carry { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(9px) rotate(-1deg); } }
-    @keyframes workshop-cart { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-12px); } }
-    @keyframes workshop-nod { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
-    .workshop-madam { align-items: center; bottom: 11px; display: flex; gap: 9px; opacity: 0; position: absolute; right: -260px; transition: opacity .55s ease, right .7s cubic-bezier(.2,.8,.2,1); z-index: 2; }
-    .workshop-madam.is-active { opacity: 1; right: 18px; }
-    .madam-figure { background: #875c4c; border: 2px solid #563222; border-radius: 17px 17px 7px 7px; height: 50px; position: relative; width: 34px; }
-    .madam-figure::before { background: #d7a06a; border: 2px solid #563222; border-radius: 50%; content: ""; height: 21px; left: 5px; position: absolute; top: -17px; width: 21px; }
-    .madam-speech { background: #fff7e9; border: 1px solid #b48145; border-radius: 10px 10px 3px 10px; box-shadow: 3px 3px 0 rgba(86,50,34,.12); color: #563222; font-family: "Songti TC", serif; font-size: .78rem; font-weight: 800; line-height: 1.4; margin: 0; max-width: 155px; padding: 8px 10px; }
-    .workshop-scene.is-event-active .worker-chi .head { animation: workshop-nod .65s ease-in-out 3; }
-    .workshop-scene.is-paused .workshop-worker { animation-play-state: paused; }
-    @media (max-width: 620px) { .workshop-scene { min-height: 116px; } .worker-mu { left: 10%; } .worker-chi { left: 42%; } .worker-feng { left: 73%; } .workshop-madam.is-active { right: 8px; } .madam-speech { font-size: .7rem; max-width: 128px; } }
-    @media (prefers-reduced-motion: reduce) { .workshop-scene { display: none; } .workshop-worker, .workshop-madam { animation: none !important; transition: none !important; } }
   </style>
 </head>
 <body>
@@ -223,13 +190,6 @@
           <img src="assets/hero-craftsman-character.png" alt="由木工角尺、鑿刀、木板、鉛筆與捲尺排列成的匠字">
           <figcaption>一筆一畫，都是現場留下的功夫。</figcaption>
         </figure>
-        <aside class="workshop-scene" id="workshop-scene" aria-hidden="true">
-          <span class="workshop-caption">宸匠工坊・今日施工中</span>
-          <div class="workshop-worker worker-mu"><i class="hardhat"></i><i class="head"></i><i class="body"></i><i class="tool"></i><span class="name">阿木</span></div>
-          <div class="workshop-worker worker-chi"><i class="hardhat"></i><i class="head"></i><i class="body"></i><i class="tool"></i><span class="name">阿尺</span></div>
-          <div class="workshop-worker worker-feng"><i class="hardhat"></i><i class="head"></i><i class="body"></i><i class="tool"></i><span class="name">阿鋒</span></div>
-          <div class="workshop-madam" id="workshop-madam"><span class="madam-figure"></span><p class="madam-speech">護目鏡戴好再開工。</p></div>
-        </aside>
       </div>
     </section>
 
@@ -330,74 +290,6 @@
     });
 
     renderFeature('quote');
-
-    (() => {
-      const scene = document.getElementById('workshop-scene');
-      const madam = document.getElementById('workshop-madam');
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const storageKey = 'chenjiang-workshop-m0-events-v1';
-      const cooldownMin = 10 * 60 * 1000;
-      const cooldownMax = 20 * 60 * 1000;
-      const idleDelay = 18 * 1000;
-      const maxDailyEvents = 6;
-      let timerId;
-      let active = false;
-      let visible = true;
-      let lastInteraction = Date.now();
-
-      if (!scene || !madam || reduceMotion.matches) return;
-
-      const today = () => new Date().toISOString().slice(0, 10);
-      const loadState = () => {
-        try {
-          const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-          return saved.day === today() ? saved : { day: today(), count: 0, lastEventAt: 0 };
-        } catch { return { day: today(), count: 0, lastEventAt: 0 }; }
-      };
-      const saveState = state => localStorage.setItem(storageKey, JSON.stringify(state));
-      const clearSchedule = () => { window.clearTimeout(timerId); timerId = undefined; };
-      const schedule = () => {
-        clearSchedule();
-        if (active || !visible || document.hidden || reduceMotion.matches) return;
-        const state = loadState();
-        if (state.count >= maxDailyEvents) return;
-        const idleRemaining = Math.max(0, idleDelay - (Date.now() - lastInteraction));
-        const cooldownRemaining = Math.max(0, state.lastEventAt + cooldownMin - Date.now());
-        const randomWait = cooldownMin + Math.random() * (cooldownMax - cooldownMin);
-        timerId = window.setTimeout(triggerSafetyReminder, Math.max(idleRemaining, cooldownRemaining, randomWait));
-      };
-      const triggerSafetyReminder = () => {
-        if (active || !visible || document.hidden || Date.now() - lastInteraction < idleDelay) return schedule();
-        const state = loadState();
-        if (state.count >= maxDailyEvents) return;
-        active = true;
-        scene.classList.add('is-event-active');
-        madam.classList.add('is-active');
-        window.setTimeout(() => {
-          madam.classList.remove('is-active');
-          scene.classList.remove('is-event-active');
-          active = false;
-          saveState({ day: today(), count: state.count + 1, lastEventAt: Date.now() });
-          schedule();
-        }, 5200);
-      };
-      const recordInteraction = () => {
-        lastInteraction = Date.now();
-        if (!active) schedule();
-      };
-      ['pointerdown', 'pointermove', 'touchstart', 'keydown', 'input', 'scroll'].forEach(type => window.addEventListener(type, recordInteraction, { passive: true }));
-      document.addEventListener('visibilitychange', () => {
-        scene.classList.toggle('is-paused', document.hidden);
-        schedule();
-      });
-      new IntersectionObserver(entries => {
-        visible = entries.some(entry => entry.isIntersecting);
-        scene.classList.toggle('is-paused', !visible);
-        schedule();
-      }, { threshold: .08 }).observe(scene);
-      const start = () => window.requestAnimationFrame(schedule);
-      if ('requestIdleCallback' in window) window.requestIdleCallback(start, { timeout: 1600 }); else window.setTimeout(start, 500);
-    })();
   </script>
 </body>
 </html>
