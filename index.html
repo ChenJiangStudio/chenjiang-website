@@ -51,6 +51,11 @@
     .brush::after { content: ""; position: absolute; z-index: -1; left: -.10em; right: -.08em; bottom: -.06em; height: .2em; transform: rotate(-1.6deg) skewX(-18deg); border-radius: 50% 10% 45% 15%; background: linear-gradient(90deg, var(--wood), #c27a45 74%, transparent); opacity: .85; }
     .hero .lead { max-width: 625px; margin: 35px 0 0; color: #513827; font-family: "Songti TC", "STSong", "Noto Serif TC", serif; font-size: clamp(1.03rem, 1.6vw, 1.23rem); font-weight: 600; line-height: 1.9; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 29px; }
+    .app-store-launch { display: grid; gap: 10px; max-width: 430px; margin-top: 22px; }
+    .app-store-launch[hidden] { display: none; }
+    .app-store-launch__announcement { margin: 0; color: #70401f; font-family: "Songti TC", "STSong", serif; font-size: .95rem; font-weight: 800; line-height: 1.6; }
+    .app-store-launch__button { display: inline-flex; align-items: center; justify-content: center; width: fit-content; min-height: 50px; padding: 12px 20px; color: #fffaf1; background: #1d1d1f; border: 1px solid rgba(29,29,31,.45); border-radius: 12px 12px 15px 12px; box-shadow: 0 5px 0 rgba(57,36,22,.15); font-family: "Songti TC", "STSong", serif; font-weight: 800; letter-spacing: .04em; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .app-store-launch__button:hover { transform: translateY(2px); box-shadow: 0 3px 0 rgba(57,36,22,.15); }
     .button { margin: 0; padding: 15px 25px; color: #fffaf1; background: linear-gradient(135deg, #ae6838, #784019); border: 1px solid rgba(67,35,15,.3); border-radius: 14px 14px 17px 14px; box-shadow: 0 7px 0 rgba(105,58,25,.17); font-family: "Songti TC", "STSong", serif; font-size: 1.08rem; font-weight: 800; letter-spacing: .09em; transition: transform .2s ease, box-shadow .2s ease; }
     .button:hover { transform: translateY(3px); box-shadow: 0 4px 0 rgba(105,58,25,.17); }
     .text-link { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 13px 20px; color: #4b77aa; background: rgba(255,255,255,.42); border: 1px solid #bf936d; border-radius: 14px 14px 17px 14px; font-family: "Songti TC", "STSong", serif; font-size: 1.08rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; }
@@ -139,6 +144,7 @@
       h1 { font-size: clamp(2.7rem, 13vw, 4.4rem); line-height: 1.2; }
       .hero .lead { margin-top: 28px; font-size: 1.03rem; }
       .hero-actions { gap: 11px; }
+      .app-store-launch__button { width: 100%; }
       .button, .text-link { min-height: 54px; padding: 13px 17px; font-size: .98rem; }
       .craft-visual { min-height: 395px; }
       .blueprint { inset: 8px 0 15px 2%; }
@@ -189,6 +195,7 @@
             <a class="button" href="#tools">探索工具箱功能</a>
             <a class="text-link" href="contact.html">聯絡我們</a>
           </div>
+          <div class="app-store-launch" id="app-store-launch" hidden aria-live="polite"></div>
           <ul class="hero-meta">
             <li>估料、材料、報價、工程紀錄</li>
             <li>為木作現場而做</li>
@@ -243,6 +250,7 @@
 
   <footer class="site-footer"><div class="shell"><p>宸匠木作工具箱 · 為木作現場而做</p></div></footer>
 
+  <script src="app-store-config.js"></script>
   <script>
     const features = {
       quote: {
@@ -280,6 +288,43 @@
     const screenDescription = document.querySelector('#screen-description');
     const screenStats = document.querySelector('#screen-stats');
     const screenList = document.querySelector('#screen-list');
+    const appStoreLaunch = document.querySelector('#app-store-launch');
+
+    function renderAppStoreLaunch() {
+      const config = window.APP_STORE_CONFIG || {};
+      const appStoreUrl = typeof config.appStoreUrl === 'string' ? config.appStoreUrl.trim() : '';
+
+      appStoreLaunch.replaceChildren();
+
+      if (!config.appStoreAvailable || !appStoreUrl) {
+        appStoreLaunch.hidden = true;
+        return;
+      }
+
+      const announcement = document.createElement('p');
+      announcement.className = 'app-store-launch__announcement';
+      announcement.textContent = '宸匠木作工具箱現已於 App Store 上架';
+
+      const link = document.createElement('a');
+      link.className = 'app-store-launch__button';
+      link.dataset.appStoreButton = 'true';
+      link.href = appStoreUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = '在 App Store 下載';
+      link.addEventListener('click', () => {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'app_store_click', {
+            language: 'zh-Hant',
+            placement: 'homepage',
+            destination: 'app_store'
+          });
+        }
+      });
+
+      appStoreLaunch.append(announcement, link);
+      appStoreLaunch.hidden = false;
+    }
 
     function renderFeature(key) {
       const feature = features[key];
@@ -299,6 +344,7 @@
     });
 
     renderFeature('quote');
+    renderAppStoreLaunch();
   </script>
 </body>
 </html>
