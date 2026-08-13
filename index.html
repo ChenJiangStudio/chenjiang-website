@@ -72,6 +72,11 @@
     .app-store-launch__announcement { margin: 0; color: #70401f; font-family: "Songti TC", "STSong", serif; font-size: .95rem; font-weight: 800; line-height: 1.6; }
     .app-store-launch__button { display: inline-flex; align-items: center; justify-content: center; width: fit-content; min-height: 50px; padding: 12px 20px; color: #fffaf1; background: #1d1d1f; border: 1px solid rgba(29,29,31,.45); border-radius: 12px 12px 15px 12px; box-shadow: 0 5px 0 rgba(57,36,22,.15); font-family: "Songti TC", "STSong", serif; font-weight: 800; letter-spacing: .04em; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
     .app-store-launch__button:hover { transform: translateY(2px); box-shadow: 0 3px 0 rgba(57,36,22,.15); }
+    .app-release-gallery { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(112px, .48fr); gap: 14px; width: min(540px, 100%); align-items: center; }
+    .app-release-gallery img { display: block; width: 100%; aspect-ratio: 9 / 19.5; object-fit: cover; object-position: top; border: 7px solid #6c4127; border-radius: 31px; background: #06111f; box-shadow: 13px 16px 0 rgba(105,57,27,.16); }
+    .app-release-gallery__secondary { display: grid; gap: 14px; }
+    .app-release-gallery__secondary img { border-width: 5px; border-radius: 23px; box-shadow: 8px 10px 0 rgba(105,57,27,.13); }
+    .app-release-note { margin: 15px 0 0; color: #79523a; font-size: .82rem; line-height: 1.65; }
     .button { margin: 0; padding: 15px 25px; color: #fffaf1; background: linear-gradient(135deg, #ae6838, #784019); border: 1px solid rgba(67,35,15,.3); border-radius: 14px 14px 17px 14px; box-shadow: 0 7px 0 rgba(105,58,25,.17); font-family: "Songti TC", "STSong", serif; font-size: 1.08rem; font-weight: 800; letter-spacing: .09em; transition: transform .2s ease, box-shadow .2s ease; }
     .button:hover { transform: translateY(3px); box-shadow: 0 4px 0 rgba(105,58,25,.17); }
     .text-link { display: inline-flex; align-items: center; justify-content: center; min-width: 145px; padding: 13px 20px; color: #4b77aa; background: rgba(255,255,255,.42); border: 1px solid #bf936d; border-radius: 14px 14px 17px 14px; font-family: "Songti TC", "STSong", serif; font-size: 1.08rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; }
@@ -226,7 +231,7 @@
     @media (max-width: 620px) { .hero-grid { gap: 38px; } .hero-copy { width: 100%; min-width: 0; padding: 0; } .hero-copy .lead { width: 100%; max-width: 100%; overflow-wrap: anywhere; word-break: break-all; } .hero-statement { margin-top: 21px; font-size: clamp(1.86rem, 9vw, 2.65rem); } .craft-visual { padding: 9px; box-shadow: 8px 10px 0 rgba(116,68,31,.15); } .craft-visual img { aspect-ratio: 1693 / 929; object-fit: contain; } }
 
     @media (max-width: 870px) { .app-promo { padding: 80px 0; } .app-promo-grid { grid-template-columns: 1fr; } .app-promo-visual { min-height: 520px; max-width: 520px; width: 100%; margin: 0 auto; } }
-    @media (max-width: 620px) { .app-promo { padding: 67px 0; } .app-promo-actions { align-items: stretch; } .app-store-badge { width: 100%; justify-content: center; } .app-promo-visual { min-height: 492px; } .app-promo-phone { width: min(270px, 73vw); } .app-promo-screen { min-height: 385px; } .app-qr-card { right: 0; bottom: 27px; width: 146px; } .app-teaser-reserve { left: 0; bottom: 55px; max-width: 130px; padding: 11px; } }
+    @media (max-width: 620px) { .app-promo { padding: 67px 0; } .app-promo-actions { align-items: stretch; } .app-store-badge { width: 100%; justify-content: center; } .app-promo-visual { min-height: 620px; } .app-promo-phone { width: min(270px, 73vw); } .app-promo-screen { min-height: 385px; } .app-release-gallery { width: min(360px, 92vw); grid-template-columns: minmax(0, 1fr) minmax(88px, .42fr); gap: 9px; align-self: start; } .app-release-gallery__secondary { gap: 9px; } .app-release-gallery img { border-width: 5px; border-radius: 23px; box-shadow: 8px 10px 0 rgba(105,57,27,.14); } .app-release-gallery__secondary img { border-width: 4px; border-radius: 18px; } .app-qr-card { right: 0; bottom: 27px; width: 146px; } .app-teaser-reserve { left: 0; bottom: 55px; max-width: 130px; padding: 11px; } }
   </style>
 </head>
 <body>
@@ -317,32 +322,31 @@
           <p class="app-promo-description">專為木作現場打造的實用工具，整合材料估算、工程管理、施工計算與報價工作流程，讓現場經驗變成真正能使用的數位工具。</p>
           <div class="app-promo-actions">
             <span class="app-store-badge" id="app-promo-store-badge" aria-disabled="true">
-              <span><span>上架平台</span><strong>即將於 App Store 上架</strong></span>
+              <span><span>上架平台</span><strong>現已於 App Store 推出</strong></span>
             </span>
-            <p class="app-promo-status" id="app-promo-status">正式 App Store 連結確認後啟用。</p>
+            <p class="app-promo-status" id="app-promo-status">App 已正式上架；公開下載連結核對完成後，此處將直接連往 App Store。</p>
           </div>
-          <ul class="app-promo-reserve" aria-label="App 素材預留狀態">
-            <li>App Icon 預留</li>
-            <li>Screenshot 01 預留</li>
-            <li>Screenshot 02 預留</li>
-            <li>App Store Badge 預留</li>
+          <ul class="app-promo-reserve" aria-label="App 功能重點">
+            <li>真實 App 操作畫面</li>
+            <li>天花板尺寸輸入</li>
+            <li>材料估算結果</li>
+            <li>估料單摘要</li>
           </ul>
+          <p class="app-release-note">下載按鈕與 QR Code 將於正式公開網址完成核對後啟用，不使用未確認的 App ID 或暫時轉址。</p>
         </div>
-        <div class="app-promo-visual" aria-label="App 主視覺與下載資訊預留區">
+        <div class="app-promo-visual" aria-label="宸匠木作工具箱真實 App 畫面與下載資訊">
           <div class="app-promo-halo" aria-hidden="true"></div>
-          <div class="app-promo-phone" aria-label="App 主視覺預留">
-            <div class="app-promo-screen">
-              <small>APP MAIN VISUAL</small>
-              <div class="app-promo-icon-placeholder">App Icon<br>預留</div>
-              <h3>木作現場，<br>一手掌握。</h3>
-              <p>iPhone App Screenshot 將於正式上架時替換。</p>
-              <div class="app-screenshot-placeholders" aria-hidden="true"><span>Screenshot<br>01</span><span>Screenshot<br>02</span></div>
+          <div class="app-release-gallery" aria-label="App 首頁、尺寸輸入與估料單畫面">
+            <img src="assets/app/chenjiang-app-home.jpg" alt="宸匠木作工具箱 App 首頁" width="591" height="1280" loading="lazy" decoding="async">
+            <div class="app-release-gallery__secondary">
+              <img src="assets/app/chenjiang-app-estimate-input.jpg" alt="天花板估料尺寸輸入畫面" width="591" height="1280" loading="lazy" decoding="async">
+              <img src="assets/app/chenjiang-app-estimate-summary.jpg" alt="天花板估料單摘要畫面" width="591" height="1280" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="app-qr-card" id="app-promo-qr" data-ready="false">
             <img id="app-promo-qr-image" alt="宸匠木作工具箱 App Store QR Code">
             <div class="app-qr-placeholder"><span>App Store<br>QR Code</span></div>
-            <p id="app-promo-qr-label">App Store QR Code<br>正式連結確認後啟用</p>
+            <p id="app-promo-qr-label">正式下載 QR Code<br>公開連結核對後啟用</p>
           </div>
           <div class="app-teaser-reserve" aria-label="未來品牌影片入口預留"><small>BRAND TEASER</small>品牌影片入口<br>預留</div>
         </div>
