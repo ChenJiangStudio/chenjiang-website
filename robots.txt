@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chenjiangstudio.github.io/chenjiang-website/sitemap.xml

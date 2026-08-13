@@ -14,6 +14,21 @@
   </script>
   <meta name="description" content="Chen Jiang Woodworking Toolbox: practical tools for material takeoff, quoting, and project management, built for woodworking professionals.">
   <title>Chen Jiang Woodworking Toolbox | Keep the Craft Alive</title>
+  <link rel="canonical" href="https://chenjiangstudio.github.io/chenjiang-website/en/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://chenjiangstudio.github.io/chenjiang-website/">
+  <link rel="alternate" hreflang="en" href="https://chenjiangstudio.github.io/chenjiang-website/en/">
+  <link rel="alternate" hreflang="x-default" href="https://chenjiangstudio.github.io/chenjiang-website/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Chen Jiang Woodworking Toolbox">
+  <meta property="og:description" content="Practical digital tools for real-world woodworking workflows.">
+  <meta property="og:url" content="https://chenjiangstudio.github.io/chenjiang-website/en/">
+  <meta property="og:image" content="https://chenjiangstudio.github.io/chenjiang-website/assets/hero-craftsman-character.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chen Jiang Woodworking Toolbox">
+  <meta name="twitter:description" content="Practical digital tools for real-world woodworking workflows.">
+  <meta name="twitter:image" content="https://chenjiangstudio.github.io/chenjiang-website/assets/hero-craftsman-character.png">
+  <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../styles.css">
   <style>
     :root {
@@ -171,6 +186,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="index.html">Chen Jiang Woodworking Toolbox</a>
@@ -183,12 +199,13 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="kicker">Woodworking Know-How × Digital Workflows</p>
-          <h1 class="hero-mark">CRAFT</h1>
+          <p class="hero-mark" aria-hidden="true">CRAFT</p>
+          <h1 class="sr-only">Chen Jiang Woodworking Toolbox</h1>
           <p class="hero-statement">Keep the craft alive.<br>Pass the knowledge on.</p>
           <p class="lead">We organize woodworking knowledge into practical tools, from material takeoff and production to quoting and project management, so every craftsperson can preserve and pass on their skills.</p>
           <div class="hero-actions">
@@ -203,7 +220,7 @@
         </div>
 
         <figure class="craft-visual" aria-label="A woodworking hero visual arranged into a craft symbol">
-          <img src="../assets/hero-craftsman-character.png" alt="A carpenter's square, chisel, boards, pencil, and tape measure arranged into a craft symbol">
+          <img src="../assets/hero-craftsman-character.jpg" alt="A carpenter's square, chisel, boards, pencil, and tape measure arranged into a craft symbol" width="1693" height="929" decoding="async" fetchpriority="high">
           <figcaption>Every stroke carries lessons from the workshop.</figcaption>
         </figure>
       </div>
@@ -251,6 +268,7 @@
   <footer class="site-footer"><div class="shell"><p>Chen Jiang Woodworking Toolbox · Built for real-world woodworking</p></div></footer>
 
   <script src="../app-store-config.js"></script>
+  <script src="../analytics.js"></script>
   <script>
     const features = {
       quote: {
@@ -346,5 +364,6 @@
     renderFeature('quote');
     renderAppStoreLaunch();
   </script>
+  <script src="../site-enhancements.js"></script>
 </body>
 </html>
