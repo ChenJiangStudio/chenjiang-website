@@ -207,7 +207,6 @@
       .hero-actions { gap: 11px; }
       .app-store-launch__button { width: 100%; }
       .button, .text-link { min-height: 54px; padding: 13px 17px; font-size: .98rem; }
-      .craft-visual { min-height: 395px; }
       .blueprint { inset: 8px 0 15px 2%; }
       .tool-screen { min-height: 469px; padding: 25px 21px; border-width: 9px; box-shadow: 9px 10px 0 #c88d5a; }
       .screen-top { margin-bottom: 26px; }
@@ -227,8 +226,14 @@
     .craft-visual { order: -1; min-height: 0; margin: 0; padding: 13px; transform: rotate(-1.35deg); background: #e7d2b7; border: 1px solid rgba(94,53,25,.2); border-radius: 5px 22px 6px 17px; box-shadow: 14px 17px 0 rgba(116,68,31,.16); }
     .craft-visual img { display: block; width: 100%; aspect-ratio: 1.04 / 1; object-fit: cover; object-position: left center; border-radius: 2px 15px 2px 12px; }
     .craft-visual figcaption { margin: 10px 4px 1px; color: #70401f; font-family: "Songti TC", "STSong", serif; font-size: .78rem; font-weight: 800; letter-spacing: .08em; transform: rotate(.8deg); }
-    @media (max-width: 870px) { .hero-grid { grid-template-columns: 1fr; } .craft-visual { order: initial; max-width: 650px; margin: 0 auto; } .hero-mark { font-size: clamp(6.3rem, 27vw, 10rem); } }
-    @media (max-width: 620px) { .hero-grid { gap: 38px; } .hero-copy { width: 100%; min-width: 0; padding: 0; } .hero-copy .lead { width: 100%; max-width: 100%; overflow-wrap: anywhere; word-break: break-all; } .hero-statement { margin-top: 21px; font-size: clamp(1.86rem, 9vw, 2.65rem); } .craft-visual { padding: 9px; box-shadow: 8px 10px 0 rgba(116,68,31,.15); } .craft-visual img { aspect-ratio: 1693 / 929; object-fit: contain; } }
+    @media (max-width: 870px) {
+      .hero { height: auto; min-height: 0; padding: 24px 0; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .craft-visual { order: initial; width: 100%; max-width: 650px; min-height: 0; height: auto; margin: 0 auto; overflow: visible; }
+      .craft-visual img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; object-position: center; }
+      .hero-mark { font-size: clamp(6.3rem, 27vw, 10rem); }
+    }
+    @media (max-width: 620px) { .hero { padding: 20px 0 24px; } .hero-grid { gap: 38px; } .hero-copy { width: 100%; min-width: 0; padding: 0; } .hero-copy .lead { width: 100%; max-width: 100%; overflow-wrap: anywhere; word-break: break-all; } .hero-statement { margin-top: 21px; font-size: clamp(1.86rem, 9vw, 2.65rem); } .craft-visual { padding: 9px; box-shadow: 8px 10px 0 rgba(116,68,31,.15); } }
 
     @media (max-width: 870px) { .app-promo { padding: 80px 0; } .app-promo-grid { grid-template-columns: 1fr; } .app-promo-visual { min-height: 520px; max-width: 520px; width: 100%; margin: 0 auto; } }
     @media (max-width: 620px) { .app-promo { padding: 67px 0; } .app-promo-actions { align-items: stretch; } .app-store-badge { width: 100%; justify-content: center; } .app-promo-visual { min-height: 620px; } .app-promo-phone { width: min(270px, 73vw); } .app-promo-screen { min-height: 385px; } .app-release-gallery { width: min(360px, 92vw); grid-template-columns: minmax(0, 1fr) minmax(88px, .42fr); gap: 9px; align-self: start; } .app-release-gallery__secondary { gap: 9px; } .app-release-gallery img { border-width: 5px; border-radius: 23px; box-shadow: 8px 10px 0 rgba(105,57,27,.14); } .app-release-gallery__secondary img { border-width: 4px; border-radius: 18px; } .app-qr-card { right: 0; bottom: 27px; width: 146px; } .app-teaser-reserve { left: 0; bottom: 55px; max-width: 130px; padding: 11px; } }
